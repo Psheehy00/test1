@@ -7,7 +7,7 @@ friend_list = [
 ]
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/index", methods=["GET", "POST"])
 def index():
     return render_template(
         "index.html", pageTitle="Web form template", friends=friend_list
@@ -43,7 +43,18 @@ def add():
         return redirect(url_for("index"))
     else:
         return redirect(url_for("index"))
+    
+@app.route("/about", methods=["GET", "POST"])
+def about():
+    return render_template(
+        "about.html", pageTitle="About Page", friends=friend_list
+    )
 
+@app.route("/base", methods=["GET", "POST"])
+def base():
+    return render_template(
+        "base.html", pageTitle="Base Page", friends=friend_list
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
