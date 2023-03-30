@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'sheehy-sheridan-hw9'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_728230C52C0C4739A89A74C44F8306C8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5986FE5E823B4EF795F9EAE738821CEA }}
