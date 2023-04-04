@@ -3,6 +3,7 @@
 </h2>
 <hr />
 <main>
+  <link rel="stylesheet" href="./stylesheet.css">
   <form action="/add" method="POST">
     <p>
       <label for="title">Title:</label>
@@ -93,31 +94,42 @@
   {% if books %}
   <h3>Book List</h3>
   <hr />
-  <table border="1">
+  <table class="table table-hover">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Pages</th>
-        <th>Classification</th>
-        <th>How I got it</th>
-        <th>Details</th>
+        <th>Title    </th> 
+        <th>Author    </th> 
+        <th>Pages    </th> 
+        <th>Classification    </th>
+        <th>How I got it    </th> 
+        <th>Details</th> 
       </tr>
     </thead>
 
     <tbody>
       {% for book in books %}
       <tr>
-        <td>{{ book.title }}</td>
-        <td>{{ book.author }}</td>
-        <td>{{ book.pages }}</td>
-        <td>{{ book.read }}</td>
-        <td>{{ book.how }}</td>
-        <td>{{ book.details }}</td>
+        <td>{{ book.title }}</td> 
+        <td>{{ book.author }}</td> <p> </p>
+        <td>{{ book.pages }}</td> <p> </p>
+        <td>{{ book.read }}</td> <p> </p>
+        <td>{{ book.how }}</td> <p> </p>
+        <td>{{ book.details }}</td> <p> </p>
       </tr>
       {% endfor %}
     </tbody>
   </table>
   {% endif %}
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
 </main>
 {% endblock %}
